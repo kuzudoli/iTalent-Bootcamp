@@ -2,6 +2,22 @@
 
 BL bl = new BL(new DAL());
 
+//Events
+bl.DownThresholdEvent += Bl_DownThresholdEvent;
+
+void Bl_DownThresholdEvent(int count)
+{
+    Console.WriteLine("Ürün sayısı kritik durumda: " + count);
+
+}
+
+bl.UpThresholdEvent += Bl_UpThresholdEvent;
+
+void Bl_UpThresholdEvent(int count)
+{
+    Console.WriteLine("Maksimum ürün sayısına ulaşıldı: " + count);
+}
+
 bl.AddProduct(new() { id = 0, name = "Ürün 1", price = 100 });
 bl.AddProduct(new() { id = 1, name = "Ürün 2", price = 100 });
 bl.AddProduct(new() { id = 2, name = "Ürün 3", price = 100 });
@@ -20,20 +36,7 @@ bl.ReadProductList().ForEach(x =>
     Console.WriteLine(x.name);
 });
 
-
-
-//Events
-bl.DownThresholdEvent += Bl_DownThresholdEvent;
-
-void Bl_DownThresholdEvent(int count)
+for(var i=0;i<7; i++)
 {
-    Console.WriteLine("Ürün sayısı kritik durumda: " + count);
-
-}
-
-bl.UpThresholdEvent += Bl_UpThresholdEvent;
-
-void Bl_UpThresholdEvent(int count)
-{
-    Console.WriteLine("Maksimum ürün sayısına ulaşıldı: " + count);
+    bl.RemoveProduct(i);
 }
