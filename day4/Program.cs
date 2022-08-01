@@ -1,4 +1,5 @@
-﻿//using day4;
+﻿using day4;
+using day4.Extensions;
 
 //BL bl = new BL(new DAL());
 
@@ -43,9 +44,8 @@
 
 
 //SOLID Principles
-
+using day4.SOLID;
 //->OCP
-//using day4.SOLID;
 
 //ProductRepository2 repository2 = new ProductRepository2(new MongoDBRepository());
 
@@ -55,8 +55,6 @@
 //});
 
 //->SLP
-
-//using day4.SOLID;
 
 //Phone iphone = new IPhone();
 //iphone.Call();
@@ -70,7 +68,11 @@
 
 //->ISP
 
-using day4.SOLID;
-
 IReadRepository repository = new Repository2();
 //Now only access the READ operates
+
+
+//Extensions
+
+string name = "enes";
+Console.WriteLine(name.BuyukHarfYap());
