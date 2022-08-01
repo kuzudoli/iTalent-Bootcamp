@@ -72,5 +72,5 @@
 
 using day4.SOLID;
 
-IRepository2 repository = new Repository2();
-//Can reach all functions but it should be spesific declaration
+IReadRepository repository = new Repository2();
+//Now only access the READ operates

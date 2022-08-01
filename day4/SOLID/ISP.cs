@@ -7,16 +7,19 @@ using System.Threading.Tasks;
 namespace day4.SOLID
 {
     //ISP
-    internal interface IRepository2
+    internal interface IWriteRepository
     {
-        void GetAll2();
-        void Get(int id);
         void Create();
         void Remove();
         void Update();
     }
+    internal interface IReadRepository
+    {
+        void GetAll2();
+        void Get(int id);
+    }
 
-    internal class Repository2 : IRepository2
+    internal class Repository2 : IReadRepository, IWriteRepository
     {
         public void Create()
         {
