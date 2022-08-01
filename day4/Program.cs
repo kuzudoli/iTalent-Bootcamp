@@ -60,9 +60,9 @@ using day4.SOLID;
 
 Phone iphone = new IPhone();
 iphone.Call();
-iphone.TakePhoto();
+((ITakePhoto)iphone).TakePhoto();
 
-//error
+//no more error
 Phone nokia = new Nokia3310();
-nokia.Call();
-nokia.TakePhoto();  
+nokia.Call(); 
+//can't reach takephoto

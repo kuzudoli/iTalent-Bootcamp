@@ -7,20 +7,22 @@ using System.Threading.Tasks;
 namespace day4.SOLID
 {
     //LSP
+    interface ITakePhoto{
+        public abstract void TakePhoto();
+    }
     internal abstract class Phone
     {
         public abstract void Call();
-        public abstract void TakePhoto();
     }
 
-    internal class IPhone : Phone
+    internal class IPhone : Phone, ITakePhoto
     {
         public override void Call()
         {
             Console.WriteLine("Arama yapıldı! (IPhone)");
         }
 
-        public override void TakePhoto()
+        public void TakePhoto()
         {
             Console.WriteLine("Fotoğraf çekildi! (IPhone)");
         }
@@ -32,11 +34,6 @@ namespace day4.SOLID
         {
             Console.WriteLine("Arama yapıldı! (Nokia3310)");
 
-        }
-
-        public override void TakePhoto()
-        {
-            throw new NotImplementedException();
         }
     }
 }
