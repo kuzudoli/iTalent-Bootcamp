@@ -42,13 +42,27 @@
 //}
 
 
-//SOLID
+//SOLID Principles
+
 //->OCP
+//using day4.SOLID;
+
+//ProductRepository2 repository2 = new ProductRepository2(new MongoDBRepository());
+
+//repository2.GetAll().ForEach(x =>
+//{
+//    Console.WriteLine(x);
+//});
+
+//->SLP
+
 using day4.SOLID;
 
-ProductRepository2 repository2 = new ProductRepository2(new MongoDBRepository());
+Phone iphone = new IPhone();
+iphone.Call();
+iphone.TakePhoto();
 
-repository2.GetAll().ForEach(x =>
-{
-    Console.WriteLine(x);
-});
+//error
+Phone nokia = new Nokia3310();
+nokia.Call();
+nokia.TakePhoto();  
