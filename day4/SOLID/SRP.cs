@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace day4.SOLID
 {
+    //Single Responsibility Principle
     internal class Product
     {
         public int id { get; set; }
