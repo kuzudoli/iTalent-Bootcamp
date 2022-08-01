@@ -68,11 +68,26 @@ using day4.SOLID;
 
 //->ISP
 
-IReadRepository repository = new Repository2();
+//IReadRepository repository = new Repository2();
 //Now only access the READ operates
 
 
 //Extensions
 
-string name = "enes";
-Console.WriteLine(name.BuyukHarfYap());
+//string name = "enes";
+//Console.WriteLine(name.BuyukHarfYap());
+
+//int number = 5;
+//Console.WriteLine(number.KareAl());
+
+List<Person> personList = new List<Person>();
+List<PersonDto> personDtoList = new List<PersonDto>();
+
+personList.Add(new() { name = "enes", surname = "cakir", age = 22 });
+personList.Add(new() { name = "ahmet", surname = "yildiz", age = 22 });
+personList.Add(new() { name = "mehmet", surname = "son", age = 22 });
+
+personList.toConvertDto(x => x.name.Contains("en")).ForEach(x =>
+{
+    Console.WriteLine(x.fullname);
+});
