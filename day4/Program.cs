@@ -56,13 +56,21 @@
 
 //->SLP
 
+//using day4.SOLID;
+
+//Phone iphone = new IPhone();
+//iphone.Call();
+//((ITakePhoto)iphone).TakePhoto();
+
+////no more error
+//Phone nokia = new Nokia3310();
+//nokia.Call(); 
+////can't reach takephoto
+///
+
+//->ISP
+
 using day4.SOLID;
 
-Phone iphone = new IPhone();
-iphone.Call();
-((ITakePhoto)iphone).TakePhoto();
-
-//no more error
-Phone nokia = new Nokia3310();
-nokia.Call(); 
-//can't reach takephoto
+IRepository2 repository = new Repository2();
+//Can reach all functions but it should be spesific declaration
