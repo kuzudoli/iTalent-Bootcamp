@@ -24,17 +24,17 @@ namespace day4
         {
             _dal.Add(product);
 
-            //if (_dal.ReadList().Count > 10)
-            //    UpThresholdEvent(_dal.ReadList().Count);
+            if (UpThresholdEvent != null && _dal.ReadList().Count > 10)
+                UpThresholdEvent(_dal.ReadList().Count);
         }
         public Boolean RemoveProduct(int productId)
         {
             var result = _dal.Remove(productId);
 
             var count = _dal.ReadList().Count;
-            
-            //if(count < 5)
-            //    DownThresholdEvent(_dal.ReadList().Count);
+
+            if (DownThresholdEvent != null && count < 5)
+                DownThresholdEvent(_dal.ReadList().Count);
 
             return result;
         }
